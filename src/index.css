@@ -13,6 +13,50 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+.cs-message__content {
+  background-color: rgb(19, 19, 19);
+  border-radius: 10px 10px 10px 0;
+}
+.cs-message--outgoing .cs-message__content {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #2cd90a;
+  border-radius: 10px 10px 0 10px;
+}
+svg:not(:root).svg-inline--fa {
+  color: red;
+}
+svg:not(:root).svg-inline--fa:hover {
+  color: rgb(9, 8, 8);
+  border: 1px solid white;
+}
+.cs-message-input__content-editor-wrapper {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.cs-message-input__content-editor[data-placeholder]:empty:before {
+  box-sizing: border-box;
+  content: attr(data-placeholder);
+  color: rgba(0, 0, 0, 0.38);
+  display: block;
+  cursor: text;
+}
+
+.cs-message-input__content-editor {
+  background-color: green;
+}
+/* .cs-button--send {
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+  color: yellow;
+  background-color: #2cd90a;
+  background-image: none;
+  background-position: center;
+  background-size: no-repeat;
+
+  background-image: url(https://t3.ftcdn.net/jpg/02/93/72/48/360_F_293724835_LqDz77Sl5zGWOU5eEcPYMM99qeBiiaiu.jpg);
+} */
 
 a {
   font-weight: 500;

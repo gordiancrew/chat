@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "../../App.css";
+import "./chat.css";
+
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 
 import {
@@ -11,9 +13,10 @@ import {
   TypingIndicator,
   Button,
 } from "@chatscope/chat-ui-kit-react";
-import BtnPlay from "../btn-play/btn-play";
 
-const API_KEY = "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";
+import InputFile from "../input-file/input-file";
+
+const API_KEY = "###";
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = {
   //  Explain things like you're talking to a software professional with 5 years of experience.
@@ -102,7 +105,8 @@ function Chat() {
 
   return (
     <div className="App">
-      <div style={{ position: "relative", height: "80vh", width: "70vw" }}>
+      <div style={{ position: "relative", height: "80vh", width: "80vw" }}>
+        <InputFile />
         <MainContainer
           style={{
             backgroundColor: "red",
@@ -114,7 +118,6 @@ function Chat() {
           {/* <button style={{ backgroundColor: "grey" }}>www</button> */}
           <ChatContainer>
             <MessageList
-            
               scrollBehavior="auto"
               typingIndicator={
                 isTyping ? (
@@ -128,19 +131,12 @@ function Chat() {
                   <Message key={i} model={message}>
                     <Message.CustomContent>
                       <div style={{ color: "white" }}>{message.message}</div>
-                      <button
-                        style={{
-                          height: 20,
-                          width: 20,
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          backgroundColor:"rgb(254, 155, 98)"
-                        }}
+                      <div
+                        className="voice"
                         onClick={() => alert(message.message)}
                       >
                         &#128266;
-                      </button>
+                      </div>
                     </Message.CustomContent>
                   </Message>
                 );

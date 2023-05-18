@@ -1,0 +1,19 @@
+.voice {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(254, 155, 98); */
+  cursor: pointer;
+  border-radius: 50%;
+}
+.voice:hover {
+  
+  text-shadow: 0 0 5px rgb(254, 155, 98);
+}
+.voice:active {
+  text-shadow: 0 0 5px green;
+}
+
+

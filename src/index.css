@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: rgb(19, 19, 19);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,37 +14,54 @@
   -webkit-text-size-adjust: 100%;
 }
 .cs-message__content {
-  background-color: rgb(19, 19, 19);
+  background-color: rgb(10, 10, 10);
   border-radius: 10px 10px 10px 0;
 }
 .cs-message--outgoing .cs-message__content {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #2cd90a;
+  background-color: rgb(24, 24, 24);
   border-radius: 10px 10px 0 10px;
 }
 svg:not(:root).svg-inline--fa {
-  color: red;
+  color: rgb(248, 100, 14);
 }
 svg:not(:root).svg-inline--fa:hover {
-  color: rgb(9, 8, 8);
-  border: 1px solid white;
+  color: rgb(254, 155, 98);
+  /* border: 1px solid white; */
+}
+svg:not(:root).svg-inline--fa:active {
+  color: green;
+  /* border: 1px solid white; */
 }
 .cs-message-input__content-editor-wrapper {
-  background-color: #1a1a1a;
-  color: white;
+  background-color: rgb(10, 10, 10);
+  /* color: white; */
+  border: 1px solid rgb(254, 155, 98);
 }
 
 .cs-message-input__content-editor[data-placeholder]:empty:before {
   box-sizing: border-box;
   content: attr(data-placeholder);
-  color: rgba(0, 0, 0, 0.38);
+  background-color: rgb(10, 10, 10);
   display: block;
   cursor: text;
+  color: grey;
 }
 
-.cs-message-input__content-editor {
-  background-color: green;
+.cs-main-container {
+  border: 1px solid rgb(254, 155, 98);
 }
+.cs-message-list .cs-typing-indicator {
+  background-color: rgb(32, 32, 32);
+}
+.cs-message-input__content-editor {
+  background-color: rgb(10, 10, 10);
+  color: white;
+}
+.cs-typing-indicator__text {
+  color: white;
+}
+
 /* .cs-button--send {
   height: 40px;
   width: 40px;
@@ -57,6 +74,7 @@ svg:not(:root).svg-inline--fa:hover {
 
   background-image: url(https://t3.ftcdn.net/jpg/02/93/72/48/360_F_293724835_LqDz77Sl5zGWOU5eEcPYMM99qeBiiaiu.jpg);
 } */
+
 
 a {
   font-weight: 500;
@@ -97,6 +115,9 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+input[type="checkbox" i]{
+  margin: 3px 3px 0 3px;
 }
 
 @media (prefers-color-scheme: light) {

@@ -14,8 +14,6 @@ import {
   Button,
 } from "@chatscope/chat-ui-kit-react";
 
-import InputFile from "../input-file/input-file";
-
 const API_KEY = "###";
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = {
@@ -26,6 +24,7 @@ const systemMessage = {
 };
 
 function Chat() {
+  const [valueButton, setValueButton] = useState(0);
   const [messages, setMessages] = useState([
     {
       message: "Hello, I'm ChatGPT! Ask me anything!",
@@ -73,6 +72,7 @@ function Chat() {
     // determine how we want chatGPT to act.
     const apiRequestBody = {
       model: "gpt-3.5-turbo",
+      button: valueButton,
       messages: [
         systemMessage, // The system message DEFINES the logic of our chatGPT
         ...apiMessages, // The messages from our chat with ChatGPT
@@ -106,23 +106,14 @@ function Chat() {
   return (
     <div className="App">
       <div style={{ position: "relative", height: "80vh", width: "80vw" }}>
-        <InputFile />
-        <MainContainer
-          style={{
-            backgroundColor: "red",
-            position: "relative",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
+        <MainContainer>
           {/* <button style={{ backgroundColor: "grey" }}>www</button> */}
           <ChatContainer>
             <MessageList
+              style={{ backgroundColor: "rgb(32,32,32)" }}
               scrollBehavior="auto"
               typingIndicator={
-                isTyping ? (
-                  <TypingIndicator content="ChatGPT is typing" />
-                ) : null
+                isTyping ? <TypingIndicator content="eduBot is typing" /> : null
               }
             >
               {messages.map((message, i) => {
@@ -144,24 +135,38 @@ function Chat() {
             </MessageList>
 
             <MessageInput
+              className="messageInput"
               attachButton="false"
-              style={{ backgroundColor: "black", paddingTop: 30 }}
+              style={{
+                backgroundColor: "rgb(32,32,32)",
+                paddingTop: 30,
+                paddingBottom: 15,
+                borderTop: "1px solid rgb(254, 155, 98)",
+                display: "flex",
+                flexDirection: "start",
+              }}
               placeholder="Type message here"
               onSend={handleSend}
             />
           </ChatContainer>
         </MainContainer>
-        <div
+        <form
           style={{
             position: "absolute",
-            bottom: 50,
-            left: 50,
-            color: "red",
+            bottom: 60,
+            left: 10,
+            color: "white",
             zIndex: "20",
+            display: "flex",
+            alignItems: "center",
           }}
         >
-          uu
-        </div>
+          <input
+            type="checkbox"
+            onChange={() => setValueButton(valueButton === 0 ? 1 : 0)}
+          />
+          <label>aaa</label>
+        </form>
       </div>
     </div>
   );
